@@ -45,7 +45,7 @@ class Payment extends \Cheddar\Api
             'PUT',
             '/api/v1/payments/' . $uuid,
             200,
-            [ 'refund' => $metadata ]
+            [ 'metadata' => $metadata ]
         );
 
         return new \Cheddar\Data\Payment($response->content());

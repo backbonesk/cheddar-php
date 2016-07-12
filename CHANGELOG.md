@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.1: 13/07/2016
+
+Small fix to update metadata instead of refunds, when updating a payment.
+
 ## v0.4.0: 12/07/2016
 
 Open sourcing Cheddar library, open sourcing it with added support for Poštová banka's iTerminal service.

@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.4.0: 12/07/2016
+
+Open sourcing Cheddar library, open sourcing it with added support for Poštová banka's iTerminal service.
+
+Library has been rewritten to support PSR-2 standard.
+
 ## v0.3.0: 01/03/2016
 
 Return card expiration date if available in `card_expire_on` instance variable in `Payment` data object.

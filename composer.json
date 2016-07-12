@@ -1,0 +1,27 @@
+{
+  "name": "backbone/cheddar",
+  "type": "library",
+  "version": "0.4.0",
+  "license": "MIT",
+  "description": "PHP bindings for Cheddar payment gateway",
+  "keywords": ["cheddar", "payment", "money", "slovakia", "czech republic", "latvia", "cardpay", "comfortpay", "tatrapay", "trustpay", "sporopay", "eplatby", "gpwebpay", "iterminal"],
+  "homepage": "http://www.backbone.sk/en/",
+  "authors": [
+    {
+      "name": "Palo Sopko",
+      "email": "pavol.sopko@backbone.sk"
+    }
+  ],
+  "require": {
+    "php": ">=5.4.0",
+    "ext-curl": "*",
+    "ext-hash": "*",
+    "ext-json": "*"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "~4.0"
+  },
+  "autoload": {
+    "psr-4": { "Cheddar\\": "lib/" }
+  }
+}

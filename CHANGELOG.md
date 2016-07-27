@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.2: 13/07/2016
+
+Updated documentation to reflect added ability to refund Tatra banka's CardPay payments.
+
 ## v0.4.1: 13/07/2016
 
 Small fix to update metadata instead of refunds, when updating a payment.

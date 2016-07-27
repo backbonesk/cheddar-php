@@ -184,7 +184,9 @@ However, also the status of the planned payment might be changed – from `none`
 
 ### Refunding transactions
 
-With Poštová banka’s iTerminal service you might once request a refund on executed transaction in part, or in full. The `reason` is more informative and should be one of either `requested_by_customer`, `fraudelent`, `duplicate` or `unknown` (default). Currency has to be the same as when executing the original payment.
+With Poštová banka’s iTerminal service you might once request a refund on executed transaction in part, or in full. In case of Tatra banka's CardPay service you might request as many refunds as you'd like until sum of all prior refunds reaches the amount of the original transaction.
+
+The `reason` is more informative and should be one of either `requested_by_customer`, `fraudelent`, `duplicate` or `unknown` (default). Currency has to be the same as when executing the original payment.
 
 ```php
 $payment = $cheddar->payment()->refund($payment_uuid, [

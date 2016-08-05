@@ -13,7 +13,7 @@ namespace Cheddar;
 
 final class Cheddar
 {
-    const VERSION = '0.4.2';
+    const VERSION = '0.4.3';
 
     const SERVICE_SPOROPAY = 'sporopay';
     const SERVICE_EPLATBY = 'eplatby';
@@ -25,13 +25,18 @@ final class Cheddar
     const SERVICE_GPWEBPAY = 'gpwebpay';
     const SERVICE_ITERMINAL = 'iterminal';
 
-    public static $api_endpoint = 'https://cheddar.backbone.sk';
+    const PRODUCTION_URL = 'https://www.cheddarpayments.com';
+    const SANDBOX_URL = 'https://sandbox.cheddarpayments.com';
 
     private $api_key;
     private $api_secret;
 
+    private $api_endpoint;
+
     public function __construct($config)
     {
+        $this->api_endpoint = self::PRODUCTION_URL;
+
         if (!empty($config['key'])) {
             $this->apiKey($config['key']);
         }
@@ -59,6 +64,28 @@ final class Cheddar
         }
 
         $this->api_secret = $secret;
+
+        return $this;
+    }
+
+    public function apiEndpoint($endpoint = null)
+    {
+        if ($endpoint === null) {
+            return $this->api_endpoint;
+        }
+
+        $this->api_endpoint = $endpoint;
+
+        return $this;
+    }
+
+    public function sandbox($is_sandbox = false)
+    {
+        if ($is_sandbox === true) {
+            $this->apiEndpoint(self::SANDBOX_URL);
+        } else if (in_array($this->api_endpoint, [ self::SANDBOX_URL, self::PRODUCTION_URL ])) {
+            $this->apiEndpoint(self::PRODUCTION_URL);
+        }
 
         return $this;
     }

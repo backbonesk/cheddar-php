@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.3: 05/08/2016
+
+Added support for sandbox mode with available services and switching sandbox and production URLs to [cheddarpayments.com](https://www.cheddarpayments.com).
+
 ## v0.4.2: 13/07/2016
 
 Updated documentation to reflect added ability to refund Tatra banka's CardPay payments.

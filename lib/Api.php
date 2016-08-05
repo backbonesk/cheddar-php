@@ -67,7 +67,7 @@ abstract class Api
 
         $response = new Curl(
             $method,
-            Cheddar::$api_endpoint . $url,
+            $this->client->apiEndpoint() . $url,
             $data,
             $custom_headers
         );

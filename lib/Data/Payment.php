@@ -26,8 +26,12 @@ class Payment
     public $periodicity = 0;
     public $periodicity_no = 1;
 
-    public function __construct($data = [])
+    private $api_endpoint;
+
+    public function __construct($data = [], $options = [])
     {
+        $this->api_endpoint = Cheddar::PRODUCTION_URL;
+
         $this->uuid = $data['uuid'];
         $this->service = $data['service']['handle'];
         $this->variable_symbol = $data['variable_symbol'];
@@ -68,6 +72,11 @@ class Payment
         if (!empty($data['transaction_identifier'])) {
             $this->transaction_identifier = $data['transaction_identifier'];
         }
+
+        if (!empty($options) AND isset($options['api_endpoint']) AND is_string($options['api_endpoint']))
+        {
+            $this->api_endpoint = $options['api_endpoint'];
+        }
     }
 
     public function redirectUrl()
@@ -88,6 +97,6 @@ class Payment
             ));
         }
 
-        return sprintf('%s/r/%s', Cheddar::$api_endpoint, $this->uuid);
+        return sprintf('%s/r/%s', $this->api_endpoint, $this->uuid);
     }
 }

@@ -11,8 +11,21 @@
 
 namespace Cheddar\Api;
 
+use \Cheddar\Cheddar;
+
 class Payment extends \Cheddar\Api
 {
+	private $options = [];
+
+	public function __construct(Cheddar $cheddar)
+	{
+		parent::__construct($cheddar);
+
+		$this->options = [
+			'api_endpoint' 	=> $this->client->apiEndpoint()
+		];
+	}
+
     public function details($uuid)
     {
         $response = $this->request(
@@ -21,7 +34,7 @@ class Payment extends \Cheddar\Api
             200
         );
 
-        return new \Cheddar\Data\Payment($response->content());
+        return new \Cheddar\Data\Payment($response->content(), $this->options);
     }
 
     public function create($service, $metadata)
@@ -36,7 +49,7 @@ class Payment extends \Cheddar\Api
             ]
         );
 
-        return new \Cheddar\Data\Payment($response->content());
+        return new \Cheddar\Data\Payment($response->content(), $this->options);
     }
 
     public function update($uuid, $metadata)
@@ -48,7 +61,7 @@ class Payment extends \Cheddar\Api
             [ 'metadata' => $metadata ]
         );
 
-        return new \Cheddar\Data\Payment($response->content());
+        return new \Cheddar\Data\Payment($response->content(), $this->options);
     }
 
     public function refund($uuid, $refund)
@@ -60,6 +73,6 @@ class Payment extends \Cheddar\Api
             [ 'refund' => $refund ]
         );
 
-        return new \Cheddar\Data\Payment($response->content());
+        return new \Cheddar\Data\Payment($response->content(), $this->options);
     }
 }

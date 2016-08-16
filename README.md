@@ -65,7 +65,7 @@ $client = new \Cheddar\Cheddar([
 If you need to access an environment other than production or are running custom instance of Cheddar service, you can set the endpoint manually.
 
 ```php
-$client->setEndpoint('https://...');
+$client->apiEndpoint('https://...');
 ```
 
 And if you just want to use the sandbox version of Cheddar, run the following. Please note, that only VÚB eCard, iTerminal, GP webpay and PayPal currently allow for using their test environments so in case of other providers production URLs will be used!

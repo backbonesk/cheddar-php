@@ -103,7 +103,7 @@ Second argument to the function call is an associated array of configuration opt
 Here’s a quick piece of code to get you started which will call the Cheddar service and retrieve UUID – universal identifier of the transaction and set the transaction status to `none` (see next section for more on transaction statuses).
 
 ```php
-$payment = $cheddar->payment()->create(
+$payment = $client->payment()->create(
     Cheddar::SERVICE_CARDPAY, [
         'amount'          => 9.99,
         'currency'        => \Cheddar\Currencies::EUR,
@@ -128,7 +128,7 @@ header('Location: ' . $payment->redirectUrl());
 To get all details of a payment simply pass the UUID of the payment to the following method:
 
 ```php
-$payment = $cheddar->payment()->details($uuid);
+$payment = $client->payment()->details($uuid);
 ```
 
 Afterwards you can inspect the returning `\Cheddar\Data\Payment` object, which contains these properties:
@@ -171,7 +171,7 @@ Cheddar calls the notification URL with POST method with GET attributes UUID and
 To validate the signature, you need to call the following:
 
 ```php
-$cheddar->message()->validate(
+$client->message()->validate(
     $_GET['uuid'], $_GET['signature']
 );
 ```
@@ -183,7 +183,7 @@ In case the signature is incorrect a `\Cheddar\Exceptions\MessageIntegrityExcept
 The next use case is the ability to change date and / or amount of a next planned playment. The output of the call is summary of the planned payment including its UUID.
 
 ```php
-$payment = $cheddar->payment()->update($payment_uuid, [
+$payment = $client->payment()->update($payment_uuid, [
     'charge_on' => (new \Datetime('tomorrow'))->format('Y-m-d'),
     'amount'    => 11.99
 ]);
@@ -198,7 +198,7 @@ With Poštová banka’s iTerminal service you might once request a refund on ex
 The `reason` is more informative and should be one of either `requested_by_customer`, `fraudelent`, `duplicate` or `unknown` (default). Currency has to be the same as when executing the original payment.
 
 ```php
-$payment = $cheddar->payment()->refund($payment_uuid, [
+$payment = $client->payment()->refund($payment_uuid, [
     'amount' => 11.99,
     'currency' => \Cheddar\Currencies::EUR,
     'reason' => 'requested_by_customer'

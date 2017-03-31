@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.4: 31/03/2017
+
+Automatically send user's IP address to the service as part of payload when creating a payment, if not already provided.
+
 ## v0.4.3: 05/08/2016
 
 Added support for sandbox mode with available services and switching sandbox and production URLs to [cheddarpayments.com](https://www.cheddarpayments.com).

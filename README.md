@@ -100,7 +100,7 @@ Second argument to the function call is an associated array of configuration opt
 |`cpp_cart_border_color`|string| |HEX code of colour at PayPal<br>_applicable only to PayPal transactions_|
 |`periodicity`|integer| |periodicity in days, when the next periodical payment will be automatically executed; default value is 30 days<br>_applicable only to ComfortPay transactions_|
 
-Here’s a quick piece of code to get you started which will call the Cheddar service and retrieve UUID – universal identifier of the transaction and set the transaction status to `none` (see next section for more on transaction statuses).
+Here’s a quick piece of code to get you started which will call the Cheddar service and retrieve UUID – universal identifier of the transaction and set the transaction status to `none` (see next section for more on transaction statuses). User's IP is automatically added to the data array before it is sent to the service.
 
 ```php
 $payment = $client->payment()->create(
@@ -234,4 +234,4 @@ Or to run an individual test file:
 
 ---
 
-&copy; 2016 BACKBONE, s.r.o.
+&copy; 2017 BACKBONE, s.r.o.

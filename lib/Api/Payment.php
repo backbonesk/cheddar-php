@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2016 BACKBONE, s.r.o.
+ * (c) 2017 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -15,16 +15,16 @@ use \Cheddar\Cheddar;
 
 class Payment extends \Cheddar\Api
 {
-	private $options = [];
+    private $options = [];
 
-	public function __construct(Cheddar $cheddar)
-	{
-		parent::__construct($cheddar);
+    public function __construct(Cheddar $cheddar)
+    {
+        parent::__construct($cheddar);
 
-		$this->options = [
-			'api_endpoint' 	=> $this->client->apiEndpoint()
-		];
-	}
+        $this->options = [
+            'api_endpoint' => $this->client->apiEndpoint()
+        ];
+    }
 
     public function details($uuid)
     {
@@ -39,13 +39,17 @@ class Payment extends \Cheddar\Api
 
     public function create($service, $metadata)
     {
+        if (!array_key_exists('payer_ip_address', $metadata)) {
+            $metadata['payer_ip_address'] = $this->payerIP();
+        }
+
         $response = $this->request(
             'POST',
             '/api/v1/payments/',
             201,
             [
                 'service'     => $service,
-                'metadata'     => $metadata
+                'metadata'    => $metadata
             ]
         );
 

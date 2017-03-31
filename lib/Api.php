@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2016 BACKBONE, s.r.o.
+ * (c) 2017 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -35,6 +35,28 @@ abstract class Api
             'X-Signature: ' . $this->sign($url, $data)
         ];
 
+        $response = new Curl(
+            $method,
+            $this->client->apiEndpoint() . $url,
+            $data,
+            $custom_headers
+        );
+
+        $data = $response->content();
+
+        if ($response->httpStatusCode() !== $expected_http_code) {
+            throw new ApiException(
+                isset($data['error']) ? $data['error'] : 'Unknown error',
+                $data,
+                $response->httpStatusCode()
+            );
+        }
+
+        return $response;
+    }
+
+    protected function payerIP()
+    {
         $addresses = [];
 
         if (isset($_SERVER['HTTP_X_FORWARDED_FOR'])) {
@@ -58,31 +80,9 @@ abstract class Api
         ksort($addresses);
 
         foreach ($addresses as $address) {
-            if (isset($address)) {
-                $custom_headers[] = sprintf('X-Real-IP: %s', $address);
-
-                break;
-            }
+            if (isset($address))
+                return $address;
         }
-
-        $response = new Curl(
-            $method,
-            $this->client->apiEndpoint() . $url,
-            $data,
-            $custom_headers
-        );
-
-        $data = $response->content();
-
-        if ($response->httpStatusCode() !== $expected_http_code) {
-            throw new ApiException(
-                isset($data['error']) ? $data['error'] : 'Unknown error',
-                $data,
-                $response->httpStatusCode()
-            );
-        }
-
-        return $response;
     }
 
     protected function sign($url, $data = '')

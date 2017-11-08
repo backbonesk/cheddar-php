@@ -23,6 +23,7 @@ class Payment
     public $constant_symbol;
 
     public $amount = 0.00;
+    public $refunded_amount = 0.00;
     public $periodicity = 0;
     public $periodicity_no = 1;
 
@@ -38,6 +39,7 @@ class Payment
         $this->constant_symbol = $data['constant_symbol'];
 
         $this->amount = (float) $data['amount'];
+        $this->refunded_amount = (float) $data['refunded_amount'];
         $this->currency = Currencies::get($data['currency']);
         $this->status = $data['status']['status'];
 

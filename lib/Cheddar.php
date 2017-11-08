@@ -13,7 +13,7 @@ namespace Cheddar;
 
 final class Cheddar
 {
-    const VERSION = '0.4.4';
+    const VERSION = '0.4.5';
 
     const SERVICE_SPOROPAY = 'sporopay';
     const SERVICE_EPLATBY = 'eplatby';

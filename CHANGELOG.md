@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.5: 08/11/2017
+
+Expose `refunded_amount` on `Payment` object (status of refunded payments stays as `completed` and only the refunded amount changes).
+
 ## v0.4.4: 31/03/2017
 
 Automatically send user's IP address to the service as part of payload when creating a payment, if not already provided.

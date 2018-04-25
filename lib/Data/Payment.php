@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2017 BACKBONE, s.r.o.
+ * (c) 2018 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -24,6 +24,7 @@ class Payment
 
     public $amount = 0.00;
     public $refunded_amount = 0.00;
+    public $service_fee_amount = 0.00;
     public $periodicity = 0;
     public $periodicity_no = 1;
 
@@ -40,6 +41,7 @@ class Payment
 
         $this->amount = (float) $data['amount'];
         $this->refunded_amount = (float) $data['refunded_amount'];
+        $this->service_fee_amount = (float) $data['service_fee_amount'];
         $this->currency = Currencies::get($data['currency']);
         $this->status = $data['status']['status'];
 

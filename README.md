@@ -141,6 +141,7 @@ Afterwards you can inspect the returning `\Cheddar\Data\Payment` object, which c
 |`constant_symbol`|string|✓|0308|payment for services|
 |`amount`|float|✓|0.00|original amount of the transaction|
 |`refunded_amount`|float|✓|0.00|refunded amount of the transaction|
+|`service_fee_amount`|float|✓|0.00|provision for the transaction in card payments _available when using CardPay / ComfortPay and set up with PGP encrypted statements or PayPal service_|
 |`currency`|`Currencies`|✓|EUR|currency of the transaction|
 |`periodicity`|integer| |0|number of days in which next payment will be executed|
 |`periodicity_no`|integer| |1|number of transaction in order (using the same variable symbol)|
@@ -234,4 +235,4 @@ Or to run an individual test file:
 
 ---
 
-&copy; 2017 BACKBONE, s.r.o.
+&copy; 2018 BACKBONE, s.r.o.

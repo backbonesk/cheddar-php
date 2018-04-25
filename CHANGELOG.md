@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.6: 25/04/2018
+
+Expose `service_fee_amount` on `Payment` object.
+
 ## v0.4.5: 08/11/2017
 
 Expose `refunded_amount` on `Payment` object (status of refunded payments stays as `completed` and only the refunded amount changes).

@@ -13,7 +13,7 @@ namespace Cheddar;
 
 final class Cheddar
 {
-    const VERSION = '0.4.6';
+    const VERSION = '0.5.0';
 
     const SERVICE_SPOROPAY = 'sporopay';
     const SERVICE_EPLATBY = 'eplatby';
@@ -93,6 +93,11 @@ final class Cheddar
     public function payment()
     {
         return new Api\Payment($this);
+    }
+
+    public function transaction()
+    {
+        return new Api\Transaction($this);
     }
 
     public function message()

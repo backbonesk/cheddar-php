@@ -14,6 +14,7 @@ namespace Cheddar\Data;
 use Cheddar\Cheddar;
 use Cheddar\Currencies;
 use Cheddar\Exceptions\CheddarException;
+use Exception;
 
 class Payment
 {

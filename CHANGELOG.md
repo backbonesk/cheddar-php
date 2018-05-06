@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.0
+
+Added API to query `trancastions` endpoints with business account transaction records. As it is meant for internal purposes for the moment and requires special setup, no further documentation is necessary. For more information contact us.
+
 ## v0.4.6: 25/04/2018
 
 Expose `service_fee_amount` on `Payment` object.

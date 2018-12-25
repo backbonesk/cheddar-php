@@ -287,4 +287,4 @@ Or to run an individual test file:
 
 ---
 
-&copy; 2018 BACKBONE, s.r.o.
+&copy; 2019 BACKBONE, s.r.o.

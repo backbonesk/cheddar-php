@@ -152,7 +152,7 @@ After the payment process at the payment gateway is finished, you will be redire
 |`timeout`|special temporary status used only by Tatra banka’s TatraPay service|
 |`pending`|special status for PayPal before an IPN notification has resolved the transaction status as either rejected or completed|
 |`cancelled`|in case of periodical payments available only with Tatra banka’s ComfortPay service this status means that planned transaction has been cancelled|
-|`expired`|old payment without clear result (e.g. user abondoned the payment form while at bank’s gateway)|
+|`expired`|old payment without clear result (e.g. user abandoned the payment form while at bank’s gateway)|
 
 ### Getting transaction details
 

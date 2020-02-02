@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2018 BACKBONE, s.r.o.
+ * (c) 2020 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -30,6 +30,7 @@ class Transaction
     public $amount = 0.00;
     public $currency;
 
+    public $iban = null;
     public $description = '';
     public $notes = '';
 
@@ -61,6 +62,10 @@ class Transaction
 
         $this->amount = (float) $data['amount'];
         $this->currency = Currencies::get($data['currency']);
+
+        if (!empty($data['iban'])) {
+            $this->iban = $data['iban'];
+        }
 
         if (!empty($data['notes'])) {
             $this->notes = $data['notes'];

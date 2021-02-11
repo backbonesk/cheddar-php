@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2019 BACKBONE, s.r.o.
+ * (c) 2021 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -13,7 +13,7 @@ namespace Cheddar;
 
 final class Cheddar
 {
-    const VERSION = '0.4.6';
+    const VERSION = '0.4.7';
 
     const SERVICE_SPOROPAY = 'sporopay';
     const SERVICE_EPLATBY = 'eplatby';
@@ -24,6 +24,7 @@ final class Cheddar
     const SERVICE_PAYPAL = 'paypal';
     const SERVICE_GPWEBPAY = 'gpwebpay';
     const SERVICE_ITERMINAL = 'iterminal';
+    const SERVICE_ITERMINAL2 = 'iterminal2';	
 
     const PRODUCTION_URL = 'https://www.cheddarpayments.com';
     const SANDBOX_URL = 'https://sandbox.cheddarpayments.com';

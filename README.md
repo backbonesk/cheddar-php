@@ -4,20 +4,15 @@ A PHP wrapper for Cheddar's application interface. Cheddar is a payment gateway 
 
 At the moment, the following payment methods and services are supported by Cheddar and this library:
 
-* [CardPay](https://www.tatrabanka.sk/sk/business/ucty-platby-karty/elektronicke-bankovnictvo/cardpay.html) with optional addition for [ComfortPay](http://www.tatrabanka.sk/cardpay/CardPay_ComfortPay_technicka_prirucka.pdf) service – Tatra banka, a.s.
-* [TatraPay](http://www.tatrabanka.sk/sk/business/ucty-platby-karty/elektronicke-bankovnictvo/tatrapay.html) – Tatra banka, a.s.
-
-* [ePlatby VÚB](https://www.vub.sk/pre-podnikatelov/nonstop-banking/e-commerce-pre-internetovych-obchodnikov/e-platby-vub/) – VÚB, a.s.
-
-* [VÚB eCard](http://www.vub.sk/pre-firmy/nonstop-banking/e-commerce-pre-internetovych-obchodnikov/ecard/) – VÚB, a.s.
-
-* [SporoPay](https://www.slsp.sk/sk/biznis/ucty-a-transakcie/prijimanie-platieb-kat/Sporopay) – Slovenská sporiteľna, a.s.
-
-* [iTerminal](https://www.postovabanka.sk/pre-firmy/eft-pos-terminal/iterminal/) – Poštová banka, a.s.
-
-* [GP webpay](http://gpwebpay.cz/Content/downloads/GP_webpay_Seznameni_se_systemem_072013.pdf) – Global Payments Europe, s.r.o.
-
-* [PayPal](http://www.paypal.com) – PayPal (Europe) S.à r.l. et Cie, S.C.A.
+* [CardPay](https://www.tatrabanka.sk/sk/business/ucty-platby/prijimanie-platieb/cardpay/) with optional addition for [ComfortPay](http://www.tatrabanka.sk/cardpay/CardPay_ComfortPay_technicka_prirucka.pdf) service -- Tatra banka, a.s.
+* [TatraPay](https://www.tatrabanka.sk/sk/business/ucty-platby/prijimanie-platieb/tatrapay/) -- Tatra banka, a.s.
+* [ePlatby VÚB](https://www.vub.sk/firmy-podnikatelia/platby/eplatby/) -- VÚB, a.s.
+* [VÚB eCard](https://www.vub.sk/firmy-podnikatelia/platby/ecard/) -- VÚB, a.s.
+* [SporoPay](https://www.slsp.sk/sk/biznis/prijimanie-platieb/sporopay) -- Slovenská sporiteľna, a.s.
+* [iTerminal](https://www.postovabanka.sk/korporatni-klienti/eft-pos-terminal/iterminal/) -- Poštová banka, a.s.
+* [GP webpay](https://gpwebpay.cz/downloads/GP_webpay_Gateway.pdf) -- Global Payments Europe, s.r.o.
+* [TrustCard](https://doc.trustpay.eu/v02?ShowDirectDebits=true&ShowDirectBanking=true&ShowApiBanking=true&ShowApiBankingVibans=true#overview) -- TrustPay, a.s.
+* [PayPal](http://www.paypal.com) -- PayPal (Europe) S.à r.l. et Cie, S.C.A.
 
 To see what is new or changed in the current version, check out the [changelog](./CHANGELOG.md).
 
@@ -108,7 +103,8 @@ First argument is a service provider, which can currently be one of the followin
 |`Cheddar::SERVICE_ECARD`|eCard, VÚB|
 |`Cheddar::SERVICE_PAYPAL`|PayPal Payments Standard, PayPal|
 |`Cheddar::SERVICE_GPWEBPAY`|GP webpay, Global Payments Europe|
-|`Cheddar::SERVICE_ITERMINAL`|iTerminal, Poštová banka|
+|`Cheddar::SERVICE_ITERMINAL`|iTerminal, Poštová banka (firstdata.lv backend)|
+|`Cheddar::SERVICE_ITERMINAL2`|iTerminal, Poštová banka (sia.eu backend)|
 
 Second argument to the function call is an associative array of configuration options. Which options have to be used and which have no effect at all depends on the service provider. The next table lists all possible attributes:
 
@@ -287,4 +283,4 @@ Or to run an individual test file:
 
 ---
 
-&copy; 2019 BACKBONE, s.r.o.
+&copy; 2021 BACKBONE, s.r.o.

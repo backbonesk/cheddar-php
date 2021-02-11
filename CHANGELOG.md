@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.4.7: 11/02/2021
+
+Added support for new (sia.eu) Poštová banka's iTerminal service sandbox and production environments (available as `Cheddar::SERVICE_ITERMINAL2` service).
+
 ## v0.4.6: 25/04/2018
 
 Expose `service_fee_amount` on `Payment` object.

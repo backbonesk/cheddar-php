@@ -1,12 +1,19 @@
 # Changelog
 
+## v0.5.1
+
+Maintenance release (0.5.0 branch merge)
+
 ## v0.5.0
 
-Added API to query `transactions` endpoints with business account transaction records. As it is meant for internal purposes for the moment and requires special setup, no further documentation is necessary. For more information contact us.
+Added API to query `transactions` endpoints with business account transaction records. As it is meant for internal 
+purposes for the moment and requires a special setup, no further documentation is necessary. For more information 
+contact us.
 
 ## v0.4.7: 11/02/2021
 
-Added support for new (sia.eu) Poštová banka's iTerminal service sandbox and production environments (available as `Cheddar::SERVICE_ITERMINAL2` service).
+Added support for new (sia.eu) Poštová banka's iTerminal service sandbox and production environments (available as 
+`Cheddar::SERVICE_ITERMINAL2` service).
 
 ## v0.4.6: 25/04/2018
 
@@ -14,7 +21,8 @@ Expose `service_fee_amount` on `Payment` object.
 
 ## v0.4.5: 08/11/2017
 
-Expose `refunded_amount` on `Payment` object (status of refunded payments stays as `completed` and only the refunded amount changes).
+Expose `refunded_amount` on `Payment` object (status of refunded payments stays as `completed` and only the refunded 
+amount changes).
 
 ## v0.4.4: 31/03/2017
 
@@ -22,7 +30,8 @@ Automatically send user's IP address to the service as part of payload when crea
 
 ## v0.4.3: 05/08/2016
 
-Added support for sandbox mode with available services and switching sandbox and production URLs to [cheddarpayments.com](https://www.cheddarpayments.com).
+Added support for sandbox mode with available services and switching sandbox and production URLs to 
+[cheddarpayments.com](https://www.cheddarpayments.com).
 
 ## v0.4.2: 13/07/2016
 
@@ -52,7 +61,8 @@ Fixed an issue with validating messages and incorrect expectations of signatures
 
 ## v0.2.1: 07/09/2015
 
-Updated `chaching` dependency to add support for PayPal service and also support for ČSOB and a couple other Czech banks via GP webpay service.
+Updated `chaching` dependency to add support for PayPal service and also support for ČSOB and a couple other Czech 
+banks via GP webpay service.
 
 ## v0.2.0: 03/04/2015
 

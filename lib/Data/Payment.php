@@ -3,7 +3,7 @@
 /*
  * This file is part of Cheddar.
  *
- * (c) 2019 BACKBONE, s.r.o.
+ * (c) 2021 BACKBONE, s.r.o.
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -14,6 +14,7 @@ namespace Cheddar\Data;
 use Cheddar\Cheddar;
 use Cheddar\Currencies;
 use Cheddar\Exceptions\CheddarException;
+use Exception;
 
 class Payment
 {

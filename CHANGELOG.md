@@ -1,5 +1,9 @@
 # Changelog
 
+## v0.5.0
+
+Added API to query `transactions` endpoints with business account transaction records. As it is meant for internal purposes for the moment and requires special setup, no further documentation is necessary. For more information contact us.
+
 ## v0.4.7: 11/02/2021
 
 Added support for new (sia.eu) Poštová banka's iTerminal service sandbox and production environments (available as `Cheddar::SERVICE_ITERMINAL2` service).

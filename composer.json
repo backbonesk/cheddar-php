@@ -1,7 +1,7 @@
 {
   "name": "backbone/cheddar",
   "type": "library",
-  "version": "0.4.7",
+  "version": "0.5.1",
   "license": "MIT",
   "description": "PHP bindings for Cheddar payment gateway",
   "keywords": ["cheddar", "payment", "money", "slovakia", "czech republic", "latvia", "cardpay", "comfortpay", "tatrapay", "trustpay", "sporopay", "eplatby", "gpwebpay", "iterminal"],

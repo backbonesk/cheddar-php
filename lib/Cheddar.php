@@ -13,7 +13,7 @@ namespace Cheddar;
 
 final class Cheddar
 {
-    const VERSION = '0.4.7';
+    const VERSION = '0.5.1';
 
     const SERVICE_SPOROPAY = 'sporopay';
     const SERVICE_EPLATBY = 'eplatby';
@@ -24,7 +24,7 @@ final class Cheddar
     const SERVICE_PAYPAL = 'paypal';
     const SERVICE_GPWEBPAY = 'gpwebpay';
     const SERVICE_ITERMINAL = 'iterminal';
-    const SERVICE_ITERMINAL2 = 'iterminal2';	
+    const SERVICE_ITERMINAL2 = 'iterminal2';
 
     const PRODUCTION_URL = 'https://www.cheddarpayments.com';
     const SANDBOX_URL = 'https://sandbox.cheddarpayments.com';
@@ -94,6 +94,11 @@ final class Cheddar
     public function payment()
     {
         return new Api\Payment($this);
+    }
+
+    public function transaction()
+    {
+        return new Api\Transaction($this);
     }
 
     public function message()
